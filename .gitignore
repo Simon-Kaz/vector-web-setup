@@ -4,3 +4,8 @@
 **/package-lock.json
 .prettierignore
 /site/ota/*
+
+# TLS material -- generate your own at deploy time; never commit private keys.
+privkey.pem
+privcert.pem
+csr.pem

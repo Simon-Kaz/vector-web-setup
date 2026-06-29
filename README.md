@@ -1,4 +1,10 @@
-# Vector Web Setup (non DDL)
+# Vector Web Setup (VectorKit fork)
+
+A fork maintained for the [VectorKit](https://github.com/Simon-Kaz/VectorKit)
+project, to self-host the Anki Vector web setup / firmware flashing flow with no
+third-party dependency. MIT licensed; see `LICENSE` and `NOTICE.md` for the fork
+lineage (Digital Dream Labs -> bliteknight -> VectorKit).
+
 Vector Web Setup provides an open source tool to allow users of Vector
 to configure their robot without relying on the proprietary phone
 application that previously provided the only method a user could use

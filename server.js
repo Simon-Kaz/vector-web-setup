@@ -12,8 +12,16 @@ let port = process.env.SERVER_PORT || 8000;
 let otaport = process.env.OTA_SERVER_PORT || 8001;
 let serverIp = "0.0.0.0"
 
-var privateKey = fs.readFileSync( 'privkey.pem' );
-var certificate = fs.readFileSync( 'privcert.pem' );
+// TLS material for the optional HTTPS server below. Generate your own; do NOT
+// commit private keys (see README). Read lazily so the HTTP server still runs
+// when these files are absent.
+let privateKey, certificate;
+try {
+  privateKey = fs.readFileSync('privkey.pem');
+  certificate = fs.readFileSync('privcert.pem');
+} catch (err) {
+  console.log('No privkey.pem/privcert.pem found; HTTPS server disabled. See README.');
+}
 
 app.set("view engine", "ejs");
 app.use("/", express.static('site'))
